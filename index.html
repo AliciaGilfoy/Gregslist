@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Greg's List</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+        integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+
+
+
+    <main>
+        <div class="row" id="cars">
+            <div class="col-4">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#car-form">
+                    Add Car
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="car-form" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Please enter new car's information</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form onsubmit="app.carController.addCar(event)">
+                                        <div class="form-group">
+                                            <label for="make">Make</label>
+                                            <input type="text" class="form-control" name="make"
+                                                placeholder="Enter make here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="model">Model</label>
+                                            <input type="text" class="form-control" name="model"
+                                                placeholder="Enter model here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="year">Year</label>
+                                            <input type="number" min="1900" max="2020" class="form-control" name="year"
+                                                placeholder="Enter year here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="color">Color</label>
+                                            <input type="text" class="form-control" name="color"
+                                                placeholder="Enter color here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price">Price</label>
+                                            <input type="number" class="form-control" name="price"
+                                                placeholder="Enter price here...">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pl-4" id="car-row">
+            <h1>Cars for Sale</h1>
+        </div>
+        <div class="row" id="jobs">
+            <div class="col-4">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#job-form">
+                    Add Job
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="job-form" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Please enter new job's information</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form onsubmit="app.jobController.addJob(event)">
+                                        <div class="form-group">
+                                            <label for="business">Business</label>
+                                            <input type="text" class="form-control" name="business"
+                                                placeholder="Enter business name here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="job">Job Title</label>
+                                            <input type="text" class="form-control" name="job"
+                                                placeholder="Enter job title here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="salary">Salary</label>
+                                            <input type="number" min="0" class="form-control" name="salary"
+                                                placeholder="Enter yearly salary here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="experience">Experience</label>
+                                            <input type="text" class="form-control" name="experience"
+                                                placeholder="Enter experience required here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Job Description</label>
+                                            <input type="text" class="form-control" name="description"
+                                                placeholder="Enter job description here...">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pl-4" id="job-row">
+            <h1>Jobs</h1>
+        </div>
+        <div class="row" id="houses">
+            <div class="col-4">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#house-form">
+                    Add House
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="house-form" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Please enter new house's information</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container-fluid">
+                                    <form onsubmit="app.houseController.addHouse(event)">
+                                        <div class="form-group">
+                                            <label for="type">Type</label>
+                                            <input type="text" class="form-control" name="type"
+                                                placeholder="Apartment, single family, etc...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="year">Year Built</label>
+                                            <input type="number" min="1800" max="2020" class="form-control" name="year"
+                                                placeholder="Enter year built here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="rooms">Rooms</label>
+                                            <input type="number" min="0" max="100" class="form-control" name="rooms"
+                                                placeholder="Enter number of rooms here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="city">City</label>
+                                            <input type="text" class="form-control" name="city"
+                                                placeholder="Enter city located here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="price">Price</label>
+                                            <input type="num" class="form-control" name="price"
+                                                placeholder="Enter price here...">
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pl-4" id="house-row">
+            <h1>Houses for Sale</h1>
+        </div>
+    </main>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
