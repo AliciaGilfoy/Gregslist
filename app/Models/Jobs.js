@@ -10,7 +10,7 @@ export default class Job {
 
   get Template() {
     return `
-<div class="col-3">
+<div class="col-3 item">
 <h1>${this.business} is hiring:</h1>
 <h3>Job Title: ${this.job}</h3>
 <h2>Salary: $${this.salary}</h2>

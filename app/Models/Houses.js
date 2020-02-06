@@ -10,7 +10,7 @@ export default class House {
 
   get Template() {
     return `
-<div class="col-3">
+<div class="col-3 item">
 <h1>${this.type}</h1>
 <h3>Built ${this.year}</h3>
 <p>${this.rooms} rooms</p>

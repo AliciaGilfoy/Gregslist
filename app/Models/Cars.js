@@ -10,7 +10,7 @@ export default class Car {
 
   get Template() {
     return `
-<div class="col-3">
+<div class="col-3 item">
 <h1>${this.make}</h1>
 <h2>${this.model}</h2>
 <h3>Year: ${this.year}</h3>
