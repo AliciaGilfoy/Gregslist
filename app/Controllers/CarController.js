@@ -16,8 +16,15 @@ function _drawCar() {
 export default class CarController {
 
   constructor() {
-    console.log("car controller works")
+    _store.subscribe("cars", _drawCar)
+    this.getAllCars()
+
   }
+
+  getAllCars() {
+    _carService.getAllCars()
+  }
+
 
   addCar(event) {
     event.preventDefault()
@@ -26,17 +33,24 @@ export default class CarController {
       make: formData.make.value,
       model: formData.model.value,
       year: formData.year.value,
-      color: formData.color.value,
-      price: formData.price.value
+      description: formData.description.value,
+      price: formData.price.value,
+      imgUrl: formData.imgUrl.value
     }
 
-    console.log(newCar)
     _carService.addCar(newCar)
     formData.reset()
+    // @ts-ignore
     $('#car-form').modal('toggle');
     _drawCar()
   }
 
+  bid(id, price) {
+    _carService.editCar(id, { price })
+  }
 
+  delete(id) {
+    _carService.delete(id)
+  }
 
 }

@@ -80,14 +80,19 @@
                                                 placeholder="Enter year here...">
                                         </div>
                                         <div class="form-group">
-                                            <label for="color">Color</label>
-                                            <input type="text" class="form-control" name="color"
-                                                placeholder="Enter color here...">
+                                            <label for="description">Description</label>
+                                            <input type="text" class="form-control" name="description"
+                                                placeholder="Enter description here...">
                                         </div>
                                         <div class="form-group">
                                             <label for="price">Price</label>
                                             <input type="number" class="form-control" name="price"
                                                 placeholder="Enter price here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="imgUrl">Imgage Url</label>
+                                            <input type="url" class="form-control" name="imgUrl"
+                                                placeholder="Enter image Url here...">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
@@ -122,24 +127,24 @@
                                 <div class="container-fluid">
                                     <form onsubmit="app.jobController.addJob(event)">
                                         <div class="form-group">
-                                            <label for="business">Business</label>
-                                            <input type="text" class="form-control" name="business"
-                                                placeholder="Enter business name here...">
+                                            <label for="company">Company</label>
+                                            <input type="text" class="form-control" name="company"
+                                                placeholder="Enter company name here...">
                                         </div>
                                         <div class="form-group">
-                                            <label for="job">Job Title</label>
-                                            <input type="text" class="form-control" name="job"
+                                            <label for="jobTitle">Job Title</label>
+                                            <input type="text" class="form-control" name="jobTitle"
                                                 placeholder="Enter job title here...">
                                         </div>
                                         <div class="form-group">
-                                            <label for="salary">Salary</label>
-                                            <input type="number" min="0" class="form-control" name="salary"
-                                                placeholder="Enter yearly salary here...">
+                                            <label for="rate">Salary</label>
+                                            <input type="number" min="0" class="form-control" name="rate"
+                                                placeholder="Enter rate of pay here...">
                                         </div>
                                         <div class="form-group">
-                                            <label for="experience">Experience</label>
-                                            <input type="text" class="form-control" name="experience"
-                                                placeholder="Enter experience required here...">
+                                            <label for="hours">Hours</label>
+                                            <input type="number" class="form-control" name="hours"
+                                                placeholder="Enter hours here...">
                                         </div>
                                         <div class="form-group">
                                             <label for="description">Job Description</label>
@@ -179,9 +184,14 @@
                                 <div class="container-fluid">
                                     <form onsubmit="app.houseController.addHouse(event)">
                                         <div class="form-group">
-                                            <label for="type">Type</label>
-                                            <input type="text" class="form-control" name="type"
-                                                placeholder="Apartment, single family, etc...">
+                                            <label for="imgUrl">Image Url</label>
+                                            <input type="url" class="form-control" name="imgUrl"
+                                                placeholder="Enter imgage Url here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="levels">Levels</label>
+                                            <input type="text" class="form-control" name="levels"
+                                                placeholder="Enter how many levels or stories...">
                                         </div>
                                         <div class="form-group">
                                             <label for="year">Year Built</label>
@@ -189,19 +199,24 @@
                                                 placeholder="Enter year built here...">
                                         </div>
                                         <div class="form-group">
-                                            <label for="rooms">Rooms</label>
-                                            <input type="number" min="0" max="100" class="form-control" name="rooms"
-                                                placeholder="Enter number of rooms here...">
+                                            <label for="bedrooms">Bedrooms</label>
+                                            <input type="number" min="0" max="100" class="form-control" name="bedrooms"
+                                                placeholder="Enter number of bedrooms here...">
                                         </div>
                                         <div class="form-group">
-                                            <label for="city">City</label>
-                                            <input type="text" class="form-control" name="city"
-                                                placeholder="Enter city located here...">
+                                            <label for="bathrooms">Bathrooms</label>
+                                            <input type="number" class="form-control" name="bathrooms"
+                                                placeholder="Enter bathrooms here...">
                                         </div>
                                         <div class="form-group">
                                             <label for="price">Price</label>
-                                            <input type="num" class="form-control" name="price"
+                                            <input type="number" class="form-control" name="price"
                                                 placeholder="Enter price here...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="description">Description</label>
+                                            <input type="text" class="form-control" name="description"
+                                                placeholder="Enter description here...">
                                         </div>
                                         <button type="submit" class="btn btn-primary">Save</button>
                                     </form>
@@ -232,6 +247,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"
+        integrity="sha256-bd8XIKzrtyJ1O5Sh3Xp3GiuMIzWC42ZekvrMMD4GxRg=" crossorigin="anonymous"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 

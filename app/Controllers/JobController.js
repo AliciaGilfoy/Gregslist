@@ -21,25 +21,39 @@ export default class JobController {
 
 
   constructor() {
+    _store.subscribe("jobs", _drawJob)
+    this.getAllJobs()
 
-    console.log("job controller works")
   }
 
   addJob(event) {
     event.preventDefault()
     let formData = event.target
     let newJob = {
-      business: formData.business.value,
-      job: formData.job.value,
-      salary: formData.salary.value,
-      experience: formData.experience.value,
-      description: formData.description.value,
+      company: formData.company.value,
+      jobTitle: formData.jobTitle.value,
+      rate: formData.rate.value,
+      hours: formData.hours.value,
+      description: formData.description.value
     }
     _jobService.addJob(newJob)
     formData.reset()
+    // @ts-ignore
     $('#job-form').modal('toggle');
     _drawJob()
 
+  }
+
+  getAllJobs() {
+    _jobService.getAllJobs()
+  }
+
+  apply(id, hours) {
+    _jobService.editJob(id, { hours })
+  }
+
+  delete(id) {
+    _jobService.delete(id)
   }
 
 

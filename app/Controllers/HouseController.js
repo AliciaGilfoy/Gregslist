@@ -16,27 +16,42 @@ function _drawHouse() {
 
 
 export default class HouseController {
+  getAllHouses() {
+    _houseService.getAllHouses()
+  }
 
 
   constructor() {
+    _store.subscribe("houses", _drawHouse)
+    this.getAllHouses()
 
-    console.log("house controller works")
   }
 
   addHouse(event) {
     event.preventDefault()
     let formData = event.target
     let newHouse = {
-      type: formData.type.value,
+      imgUrl: formData.imgUrl.value,
       year: formData.year.value,
-      rooms: formData.rooms.value,
-      city: formData.city.value,
+      levels: formData.levels.value,
+      bedrooms: formData.bedrooms.value,
+      bathrooms: formData.bathrooms.value,
       price: formData.price.value,
+      description: formData.description.value
     }
     _houseService.addHouse(newHouse)
     formData.reset()
     $('#house-form').modal('toggle');
     _drawHouse()
   }
+
+  delete(id) {
+    _houseService.delete(id)
+  }
+
+  bid(id, price) {
+    _houseService.bid(id, { price })
+  }
+
 
 }
