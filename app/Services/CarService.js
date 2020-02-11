@@ -24,7 +24,7 @@ class CarService {
   editCar(id, update) {
     _api.put(id, update)
       .then(res => {
-        let car = _store.State.jobs.find(c => c._id == id)
+        let car = _store.State.cars.find(c => c._id == id)
         for (let prop in update) {
           car[prop] = update[prop]
         }
